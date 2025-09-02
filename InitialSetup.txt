@@ -1,0 +1,100 @@
+check if .net sdk is installed
+dotnet --version
+
+Execute a .NET SDK command.
+
+sdk-options:
+  -d|--diagnostics  Enable diagnostic output.
+  -h|--help         Show command line help.
+  --info            Display .NET information.
+  --list-runtimes   Display the installed runtimes.
+  --list-sdks       Display the installed SDKs.
+  --version         Display .NET SDK version in use.
+
+SDK commands:
+  build             Build a .NET project.
+  build-server      Interact with servers started by a build.
+  clean             Clean build outputs of a .NET project.
+  format            Apply style preferences to a project or solution.
+  help              Opens the reference page in a browser for the specified command.
+  msbuild           Run Microsoft Build Engine (MSBuild) commands.
+  new               Create a new .NET project or file.
+  nuget             Provides additional NuGet commands.
+  pack              Create a NuGet package.
+  package           Search for, add, remove, or list PackageReferences for a .NET project.
+  publish           Publish a .NET project for deployment.
+  reference         Add, remove, or list ProjectReferences for a .NET project.
+  restore           Restore dependencies specified in a .NET project.
+  run               Build and run a .NET project output.
+  sdk               Manage .NET SDK installation.
+  solution          Modify Visual Studio solution files.
+  store             Store the specified assemblies in the runtime package store.
+  test              Run unit tests using the test runner specified in a .NET project.
+  tool              Install or manage tools that extend the .NET experience.
+  vstest            Run Microsoft Test Engine (VSTest) commands.
+  workload          Manage optional workloads.
+
+Additional commands from bundled tools:
+  dev-certs         Create and manage development certificates.
+  fsi               Start F# Interactive / execute F# scripts.
+  user-jwts         Manage JSON Web Tokens in development.
+  user-secrets      Manage development user secrets.
+  watch             Start a file watcher that runs a command when files change.
+
+
+PS C:\WebDev\RawPrj> dotnet new --list
+Warning: use of 'dotnet new --list' is deprecated. Use 'dotnet new list' instead.
+For more information, run:
+   dotnet new list -h
+
+These templates matched your input: 
+
+Template Name                                 Short Name                  Language    Tags
+--------------------------------------------  --------------------------  ----------  ----------------------------------
+API Controller                                apicontroller               [C#]        Web/ASP.NET
+ASP.NET Core Empty                            web                         [C#],F#     Web/Empty
+ASP.NET Core gRPC Service                     grpc                        [C#]        Web/gRPC/API/Service
+ASP.NET Core Web API                          webapi                      [C#],F#     Web/Web API/API/Service
+ASP.NET Core Web API (native AOT)             webapiaot                   [C#]        Web/Web API/API/Service
+ASP.NET Core Web App (Model-View-Controller)  mvc                         [C#],F#     Web/MVC
+ASP.NET Core Web App (Razor Pages)            webapp,razor                [C#]        Web/MVC/Razor Pages
+Blazor Web App                                blazor                      [C#]        Web/Blazor/WebAssembly
+Blazor WebAssembly Standalone App             blazorwasm                  [C#]        Web/Blazor/WebAssembly/PWA
+Class Library                                 classlib                    [C#],F#,VB  Common/Library
+Console App                                   console                     [C#],F#,VB  Common/Console
+dotnet gitignore file                         gitignore,.gitignore                    Config
+Dotnet local tool manifest file               tool-manifest                           Config
+EditorConfig file                             editorconfig,.editorconfig              Config
+global.json file                              globaljson,global.json                  Config
+MSBuild Directory.Build.props file            buildprops                              MSBuild/props
+MSBuild Directory.Build.targets file          buildtargets                            MSBuild/props
+MSBuild Directory.Packages.props file         packagesprops                           MSBuild/packages/props/CPM
+MSTest Playwright Test Project                mstest-playwright           [C#]        Test/MSTest/Playwright/Desktop/Web
+MSTest Test Class                             mstest-class                [C#],F#,VB  Test/MSTest
+MSTest Test Project                           mstest                      [C#],F#,VB  Test/MSTest/Desktop/Web
+MVC Controller                                mvccontroller               [C#]        Web/ASP.NET
+MVC ViewImports                               viewimports                 [C#]        Web/ASP.NET
+MVC ViewStart                                 viewstart                   [C#]        Web/ASP.NET
+NuGet Config                                  nugetconfig,nuget.config                Config
+NUnit 3 Test Item                             nunit-test                  [C#],F#,VB  Test/NUnit
+NUnit 3 Test Project                          nunit                       [C#],F#,VB  Test/NUnit/Desktop/Web
+NUnit Playwright Test Project                 nunit-playwright            [C#]        Test/NUnit/Playwright/Desktop/Web
+Protocol Buffer File                          proto                                   Web/gRPC
+Razor Class Library                           razorclasslib               [C#]        Web/Razor/Library
+Razor Component                               razorcomponent              [C#]        Web/ASP.NET
+Razor Page                                    page                        [C#]        Web/ASP.NET
+Razor View                                    view                        [C#]        Web/ASP.NET
+Solution File                                 sln,solution                            Solution
+Web Config                                    webconfig                               Config
+Windows Forms App                             winforms                    [C#],VB     Common/WinForms
+Windows Forms Class Library                   winformslib                 [C#],VB     Common/WinForms
+Windows Forms Control Library                 winformscontrollib          [C#],VB     Common/WinForms
+Worker Service                                worker                      [C#],F#     Common/Worker/Web
+WPF Application                               wpf                         [C#],VB     Common/WPF
+WPF Class Library                             wpflib                      [C#],VB     Common/WPF
+WPF Custom Control Library                    wpfcustomcontrollib         [C#],VB     Common/WPF
+WPF User Control Library                      wpfusercontrollib           [C#],VB     Common/WPF
+xUnit Test Project                            xunit                       [C#],F#,VB  Test/xUnit/Desktop/Web
+
+
+dotnet new <TEMPLATE_NAME> [OPTIONS]
