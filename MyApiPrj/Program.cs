@@ -1,9 +1,31 @@
+// The WebApplicationBuilder has these main properties:
+// Configuration - Configuration system (IConfiguration)
+// Environment - Hosting environment information (IWebHostEnvironment)
+// Logging - Logging configuration (ILoggingBuilder)
+// Services - Dependency injection container (IServiceCollection)
+// WebHost - Web host configuration (IWebHostBuilder)
+// Host - Generic host configuration (IHostBuilder)
+
 //When you create a web app, IConfiguration is automatically set up
 var builder = WebApplication.CreateBuilder(args);
+//IConfiguration ---
 var appSettingLogging = builder.Configuration["Logging:LogLevel:Default"];
 Console.WriteLine(appSettingLogging);
+
 //dotnet run --myArg to write myArgs in terminal
 //Console.WriteLine(args[0]);
+
+//IConfiguration ---
+
+//Enviroment get info from properties/lunchSetting.json/Profile/ASPNETCORE_ENVIRONMENT
+//ASPNETCORE_ENVIRONMENT=Development
+//ASPNETCORE_ENVIRONMENT=Production
+//ASPNETCORE_ENVIRONMENT=Staging
+
+if (builder.Environment.IsDevelopment())
+{
+    Console.WriteLine("we are in Dev Enviroment");
+}
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
