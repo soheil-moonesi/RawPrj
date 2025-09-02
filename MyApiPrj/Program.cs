@@ -1,5 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 
+//dotnet run --myArg to write myArgs in terminal
+Console.WriteLine(args[0]);
+
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
