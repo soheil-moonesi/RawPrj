@@ -98,3 +98,17 @@ xUnit Test Project                            xunit                       [C#],F
 
 
 dotnet new <TEMPLATE_NAME> [OPTIONS]
+
+
+Option	Short	Description	                      Example
+--name	-n	Name of the output project	        -n MyApi
+--output	-o	Output directory	                -o ./src
+--framework	-f	Target framework	              -f net8.0
+--no-https		Disable HTTPS                    	--no-https
+--language	-lang	Project language (C#/F#/VB) 	-lang "C#"
+
+for github 
+git config --global user.name "John Doe"
+git config --global user.email "john.doe@example.com"
+
+dotnet new webapi -n MyApiPrj
