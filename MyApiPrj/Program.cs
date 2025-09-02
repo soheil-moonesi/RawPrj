@@ -12,20 +12,29 @@ var builder = WebApplication.CreateBuilder(args);
 var appSettingLogging = builder.Configuration["Logging:LogLevel:Default"];
 Console.WriteLine(appSettingLogging);
 
-//dotnet run --myArg to write myArgs in terminal
+//dotnet run --myArg to write myArgs in terminal 
+//dotnet run arg1 arg2 arg3
+
 //Console.WriteLine(args[0]);
 
 //IConfiguration ---
 
+//Enviroment ---
 //Enviroment get info from properties/lunchSetting.json/Profile/ASPNETCORE_ENVIRONMENT
 //ASPNETCORE_ENVIRONMENT=Development
 //ASPNETCORE_ENVIRONMENT=Production
 //ASPNETCORE_ENVIRONMENT=Staging
 
+
+
 if (builder.Environment.IsDevelopment())
 {
     Console.WriteLine("we are in Dev Enviroment");
 }
+
+//Enviroment ---
+
+
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
