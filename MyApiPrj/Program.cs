@@ -29,10 +29,30 @@ Console.WriteLine(appSettingLogging);
 
 if (builder.Environment.IsDevelopment())
 {
+    //when we use builder.Logging.ClearProviders(); to remove all logging defualts this action
+    //is not take effect on Console because Console.writeline bypass all loging systems 
+    //and not affected by builder.logging
     Console.WriteLine("we are in Dev Enviroment");
 }
 
 //Enviroment ---
+
+//Logging ---
+//logging is already installed but if we want to custumize it 
+//1.delete all defualt
+builder.Logging.ClearProviders();
+//2.Add Console log
+builder.Logging.AddConsole();
+//SetMinimumLevel(LogLevel.Debug) is like setting a filter that says:
+//Only show me log messages that are Debug level or higher
+// Log Level	Severity	Shows When Set to Debug?
+// Trace	    Lowest	        ❌ No (filtered out)
+// Debug	    Low         	✅ Yes
+// Information	Medium   	    ✅ Yes
+// Warning	    High	        ✅ Yes
+// Error	    Higher       	✅ Yes
+// Critical	    Highest	        ✅ Yes
+//builder.Logging.SetMinimumLevel(LogLevel.Debug);
 
 
 
@@ -42,11 +62,18 @@ builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+//log critical error
+app.Logger.LogCritical("this is critical logging message");
+
+//if SetMinimumLevel = debug , trace log is not show
+app.Logger.LogTrace("this is log trace");
 
 app.UseHttpsRedirection();
 
