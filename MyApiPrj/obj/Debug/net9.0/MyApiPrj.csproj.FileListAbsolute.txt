@@ -64,3 +64,4 @@ C:/WebDev/RawPrj/MyApiPrj/obj/Debug/net9.0/ref/MyApiPrj.dll
 /home/soheil/MyProjects/RawPrj/MyApiPrj/obj/Debug/net9.0/MyApiPrj.pdb
 /home/soheil/MyProjects/RawPrj/MyApiPrj/obj/Debug/net9.0/MyApiPrj.genruntimeconfig.cache
 /home/soheil/MyProjects/RawPrj/MyApiPrj/obj/Debug/net9.0/ref/MyApiPrj.dll
+/home/soheil/MyProjects/RawPrj/MyApiPrj/bin/Debug/net9.0/Figgle.dll

@@ -6,6 +6,8 @@
  WebHost - Web host configuration (IWebHostBuilder)
  Host - Generic host configuration (IHostBuilder) */
 
+using Figgle;
+
 //When you create a web app, IConfiguration is automatically set up
 var builder = WebApplication.CreateBuilder(args);
 //IConfiguration ---
@@ -38,12 +40,24 @@ if (builder.Environment.IsDevelopment())
 //Enviroment ***
 
 // Logging ---
+
 //logging is already installed but if we want to custumize it 
 //1.delete all defualt
-builder.Logging.ClearProviders();
+//builder.Logging.ClearProviders();
 
 //2.Add Console log
-builder.Logging.AddConsole();
+//builder.Logging.AddConsole();
+
+
+// usecase of SetMinimumLevel As a Safety Net in Library Code
+// If you are writing a library and want to ensure it never logs Trace messages unless the consuming application explicitly opts in, you could set a higher floor.
+// csharp
+
+// Inside a library's service registration
+// services.AddLogging(loggingBuilder => {
+//     loggingBuilder.SetMinimumLevel(LogLevel.Information); // Library won't log Debug/Trace by itself
+// });
+
 
 // SetMinimumLevel(LogLevel.Debug) is like setting a filter that says:
 //Only show me log messages that are Debug level or higher
@@ -54,8 +68,7 @@ builder.Logging.AddConsole();
 //  Warning	    High	        ✅ Yes
 //  Error	    Higher       	✅ Yes
 //  Critical	    Highest	        ✅ Yes
-builder.Logging.SetMinimumLevel(LogLevel.Debug);
-
+//builder.Logging.SetMinimumLevel(LogLevel.Debug);
 //builder.Logging.SetMinimumLevel(LogLevel.Trace);
 
 //Logging ***
@@ -101,9 +114,16 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
+app.MapGet("/{text}", (string text) => FiggleFonts.Standard.Render(text));
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
+
+// The appsettings.json file is loaded first. Then the values in appsettings.<ASPNETCORE_
+// ENVIRONMENT>.json are loaded. The latest configuration values loaded in the chain
+// override the previous values in which the pathname matches.

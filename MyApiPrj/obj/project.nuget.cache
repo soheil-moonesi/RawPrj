@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "METMC0FmmuM=",
+  "dgSpecHash": "d3LpWNwOxvA=",
   "success": true,
   "projectFilePath": "/home/soheil/MyProjects/RawPrj/MyApiPrj/MyApiPrj.csproj",
   "expectedPackageFiles": [
+    "/home/soheil/.nuget/packages/figgle/0.5.1/figgle.0.5.1.nupkg.sha512",
     "/home/soheil/.nuget/packages/microsoft.aspnetcore.openapi/9.0.8/microsoft.aspnetcore.openapi.9.0.8.nupkg.sha512",
     "/home/soheil/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
   ],
