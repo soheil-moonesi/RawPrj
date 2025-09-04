@@ -12,11 +12,18 @@ public static class AsciiArt
         {
 
             font = typeof(FiggleFonts).
-            GetProperty(fontName, BindingFlags.Static | BindingFlags.Public)
+            //Searches for a property with the name
+            GetProperty(fontName,
+             //Property must be public and static.
+             BindingFlags.Static | BindingFlags.Public)
+            //Gets the value of the property if found
             ?.GetValue(null)
+            //convert result of above to FiggleFont
             as FiggleFont;
         }
+        //Uses standard if no property is found
         font ??= FiggleFonts.Standard;
+        //Returns as string instead of writing to console
         return font.Render(text);  
     }
 

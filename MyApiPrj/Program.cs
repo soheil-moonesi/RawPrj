@@ -6,6 +6,7 @@
  WebHost - Web host configuration (IWebHostBuilder)
  Host - Generic host configuration (IHostBuilder) */
 
+using AsciiArtSvc;
 using Figgle;
 
 //When you create a web app, IConfiguration is automatically set up
@@ -102,7 +103,7 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
+    var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
             DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
@@ -114,7 +115,12 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
-app.MapGet("/{text}", (string text) => FiggleFonts.Standard.Render(text));
+
+//app.MapGet("/{text}", (string text) => FiggleFonts.Standard.Render(text));
+//http://localhost:5026/Soheil?font=DotMatrix pass font by query string
+app.MapGet("/{text}", (string text, string? font) => AsciiArt.Write(text, font));
+
+
 
 app.Run();
 
