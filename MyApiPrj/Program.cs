@@ -1,10 +1,10 @@
-// The WebApplicationBuilder has these main properties:
-// Configuration - Configuration system (IConfiguration)
-// Environment - Hosting environment information (IWebHostEnvironment)
-// Logging - Logging configuration (ILoggingBuilder)
-// Services - Dependency injection container (IServiceCollection)
-// WebHost - Web host configuration (IWebHostBuilder)
-// Host - Generic host configuration (IHostBuilder)
+/** The WebApplicationBuilder has these main properties:
+ Configuration - Configuration system (IConfiguration)
+ Environment - Hosting environment information (IWebHostEnvironment)
+ Logging - Logging configuration (ILoggingBuilder)
+ Services - Dependency injection container (IServiceCollection)
+ WebHost - Web host configuration (IWebHostBuilder)
+ Host - Generic host configuration (IHostBuilder) */
 
 //When you create a web app, IConfiguration is automatically set up
 var builder = WebApplication.CreateBuilder(args);
@@ -17,7 +17,7 @@ Console.WriteLine(appSettingLogging);
 
 //Console.WriteLine(args[0]);
 
-//IConfiguration ---
+//IConfiguration ***
 
 //Enviroment ---
 //Enviroment get info from properties/lunchSetting.json/Profile/ASPNETCORE_ENVIRONMENT
@@ -35,7 +35,7 @@ if (builder.Environment.IsDevelopment())
     Console.WriteLine("we are in Dev Enviroment");
 }
 
-//Enviroment ---
+//Enviroment ***
 
 //Logging ---
 //logging is already installed but if we want to custumize it 
@@ -43,16 +43,16 @@ if (builder.Environment.IsDevelopment())
 builder.Logging.ClearProviders();
 //2.Add Console log
 builder.Logging.AddConsole();
-//SetMinimumLevel(LogLevel.Debug) is like setting a filter that says:
-//Only show me log messages that are Debug level or higher
-// Log Level	Severity	Shows When Set to Debug?
-// Trace	    Lowest	        ❌ No (filtered out)
-// Debug	    Low         	✅ Yes
-// Information	Medium   	    ✅ Yes
-// Warning	    High	        ✅ Yes
-// Error	    Higher       	✅ Yes
-// Critical	    Highest	        ✅ Yes
-//builder.Logging.SetMinimumLevel(LogLevel.Debug);
+/** SetMinimumLevel(LogLevel.Debug) is like setting a filter that says:
+Only show me log messages that are Debug level or higher
+ Log Level	Severity	Shows When Set to Debug?
+ Trace	    Lowest	        ❌ No (filtered out)
+ Debug	    Low         	✅ Yes
+ Information	Medium   	    ✅ Yes
+ Warning	    High	        ✅ Yes
+ Error	    Higher       	✅ Yes
+ Critical	    Highest	        ✅ Yes
+builder.Logging.SetMinimumLevel(LogLevel.Debug); */
 
 
 

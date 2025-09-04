@@ -1,0 +1,4 @@
+control+Shift+P
+git: clone 
+select Repo
+go in to General Project folder and then select it
