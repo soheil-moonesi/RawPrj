@@ -6,9 +6,12 @@
  WebHost - Web host configuration (IWebHostBuilder)
  Host - Generic host configuration (IHostBuilder) */
 
+using Application;
 using AsciiArtSvc;
 using CompositionRoot.DemoFeature;
 using Figgle;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using static CompositionRoot.DemoFeature.MyFeature;
 //todo : add services
 //When you create a web app, IConfiguration is automatically set up
@@ -43,7 +46,7 @@ Console.WriteLine(appSettingLogging);
 
 //3.best practice
 builder.Services.AddDemoFeature();
-
+builder.Services.AddApplicationServices();
 //------
 
 if (builder.Environment.IsDevelopment())
@@ -131,6 +134,17 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 })
 .WithName("GetWeatherForecast");
+
+//http://localhost:5026/MediateRTest?a=5&b=3
+app.MapGet("/MediateRTest", async (IMediator mediateR ,[FromQuery]int a ,[FromQuery]int b )=>
+{
+    var query = new AddNumbersQuery(a, b);
+    var result = await mediateR.Send(query);
+
+})
+.WithName("MediateRTest");
+
+
 
 
 //app.MapGet("/{text}", (string text) => FiggleFonts.Standard.Render(text));

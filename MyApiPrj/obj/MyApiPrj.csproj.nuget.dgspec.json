@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[0.5.1, )"
             },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.8, )"

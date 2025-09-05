@@ -11,7 +11,30 @@
 
 // According to Microsoft’s recommendation, we should create 
 //the class in the same namespace as the element we extend.
-// In our case, the IServiceCollection interface lives in
-// the Microsoft.Extensions.DependencyInjection namespace.
+
+using System.Reflection;
+using Application.Common.Behaviour;
+using MediatR;
+
+namespace Application
+{
+    public static class ConfigureServices
+    {
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+        {
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestResponseMediateRDemo<,>));
+
+
+            return services;
+        }
+
+
+
+    }
+
+
+
+}
 
 
