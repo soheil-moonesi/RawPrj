@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/soheil/MyProjects/RawPrj/MyApiPrj/MyApiPrj.csproj": {}
+    "C:\\OnlinePrj\\RawPrj\\MyApiPrj\\MyApiPrj.csproj": {}
   },
   "projects": {
-    "/home/soheil/MyProjects/RawPrj/MyApiPrj/MyApiPrj.csproj": {
+    "C:\\OnlinePrj\\RawPrj\\MyApiPrj\\MyApiPrj.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/soheil/MyProjects/RawPrj/MyApiPrj/MyApiPrj.csproj",
+        "projectUniqueName": "C:\\OnlinePrj\\RawPrj\\MyApiPrj\\MyApiPrj.csproj",
         "projectName": "MyApiPrj",
-        "projectPath": "/home/soheil/MyProjects/RawPrj/MyApiPrj/MyApiPrj.csproj",
-        "packagesPath": "/home/soheil/.nuget/packages/",
-        "outputPath": "/home/soheil/MyProjects/RawPrj/MyApiPrj/obj/",
+        "projectPath": "C:\\OnlinePrj\\RawPrj\\MyApiPrj\\MyApiPrj.csproj",
+        "packagesPath": "C:\\Users\\Soheil\\.nuget\\packages\\",
+        "outputPath": "C:\\OnlinePrj\\RawPrj\\MyApiPrj\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/soheil/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Soheil\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -72,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

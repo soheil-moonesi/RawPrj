@@ -7,8 +7,10 @@
  Host - Generic host configuration (IHostBuilder) */
 
 using AsciiArtSvc;
+using CompositionRoot.DemoFeature;
 using Figgle;
-
+using static CompositionRoot.DemoFeature.MyFeature;
+//todo : add services
 //When you create a web app, IConfiguration is automatically set up
 var builder = WebApplication.CreateBuilder(args);
 //IConfiguration ---
@@ -28,7 +30,21 @@ Console.WriteLine(appSettingLogging);
 //ASPNETCORE_ENVIRONMENT=Production
 //ASPNETCORE_ENVIRONMENT=Staging
 
+//tip: builder --(register dependencies)   -- App
 
+//-------
+//1.unchained version
+// builder.Services.AddSingleton<MyFeature>();
+// builder.Services.AddSingleton<IMyFeatureDependency, MyFeatureDependency>();
+
+//2.chained version
+// builder.Services.AddSingleton<MyFeature>()
+// .AddSingleton<IMyFeatureDependency, MyFeatureDependency>();
+
+//3.best practice
+builder.Services.AddDemoFeature();
+
+//------
 
 if (builder.Environment.IsDevelopment())
 {
@@ -79,6 +95,7 @@ if (builder.Environment.IsDevelopment())
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+//tip: app --(IOC container is now available)-- App.run
 
 
 // Configure the HTTP request pipeline.
