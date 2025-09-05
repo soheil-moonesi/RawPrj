@@ -28,7 +28,8 @@ namespace Application
 
             return services;
         }
-
+//Use TRequest/TResponse when working directly with MediatR interfaces
+//Use TInput/TOutput when creating abstract/base classes for better generalization
 
 
     }

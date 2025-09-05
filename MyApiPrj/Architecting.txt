@@ -1,0 +1,50 @@
+We usually build the domain layer around a domain model. There are two macro points of view on this:
+• Using a rich model.
+• Using an anemic model.
+
+Rich domain model
+A rich domain model is more object-oriented, in the “purest” sense of the term, and encapsulates
+the domain logic as part of the model inside methods
+
+A rich domain model can be useful if you are building a stateful application where the domain model
+can live in memory longer than the time of an HTTP request. Other patterns can help you with that, such
+as Model-View-View-Model (MVVM), Model-View-Presenter (MVP), and Model-View-Update (MVU).
+
+accumulation of responsibilities by a single class. 
+hardcoding logic into the domain model may hinder your ability to evolve
+business rules without changing the code itself (it can still be done).
+
+ injecting dependencies into the domain model is harder
+than other objects, such as services. This drawback reduces flexibility and increases the complexity
+of creating the models
+
+A rich model might be a good
+choice for your project if the domain is fixed and predefined.
+
+Anemic domain model
+An anemic domain model usually does not contain methods but only getters and setters. Such models
+must not contain business logic rules, as those rules belong to other objects, like service classes.
+
+ there is no method in the class anymore, only the three properties with public
+setters. We can also leverage a record class to add immutability to the mix. As for the logic, we must
+move it elsewhere, in other classes. One such pattern would be to move the logic to a service layer.
+
+A service layer in front of such an anemic model would take the input, mutate the domain object,
+and update the database. The difference is that the service owns the logic instead of the rich model.
+
+An anemic model is a good option for stateless systems, such as RESTful APIs. Since you have to
+recreate the model’s state for every request, an anemic model can offer you a way to independently
+recreate a smaller portion of the model with smaller classes optimized for each use case. Stateless
+systems require a more procedural type of thinking than a purely object-oriented approach, leaving
+the anemic models as excellent candidates for that.
+
+
+
+The service layer contains services, which are classes that interact with other domain objects, such
+as the domain model and the data layer.
+We can further divide services into two categories, domain services and application services:
+• Domain services are those services we are talking about so far. They contain domain logic and
+allow consumers from the presentation layer to read or write data. They access and mutate
+the domain model.
+• Application services like email services are unrelated to the domain and should live elsewhere,
+like in a shared assembly (why rewrite an email service for every project, right?).
