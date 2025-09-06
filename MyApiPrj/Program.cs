@@ -131,9 +131,18 @@ app.MapGet("/weatherforecast", () =>
             summaries[Random.Shared.Next(summaries.Length)]
         ))
         .ToArray();
+
+
+
+
+
+        
     return forecast;
 })
 .WithName("GetWeatherForecast");
+
+
+
 
 //http://localhost:5026/MediateRTest?a=5&b=3
 app.MapGet("/MediateRTest", async (IMediator mediateR ,[FromQuery]int a ,[FromQuery]int b )=>
@@ -164,3 +173,5 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 // The appsettings.json file is loaded first. Then the values in appsettings.<ASPNETCORE_
 // ENVIRONMENT>.json are loaded. The latest configuration values loaded in the chain
 // override the previous values in which the pathname matches.
+
+//todo: add connection string for sqlite database 

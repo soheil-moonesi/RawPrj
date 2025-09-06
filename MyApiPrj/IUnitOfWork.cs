@@ -1,4 +1,6 @@
 
+using Microsoft.EntityFrameworkCore;
+
 public interface IUnitOfWork : IDisposable
 {
     IRepository<TEntity> GetRepository<TEntity>() where TEntity : class;
@@ -6,3 +8,4 @@ public interface IUnitOfWork : IDisposable
 
 
 }
+
