@@ -10,6 +10,7 @@ using Application;
 using AsciiArtSvc;
 using CompositionRoot.DemoFeature;
 using Figgle;
+using Infrastructure;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using static CompositionRoot.DemoFeature.MyFeature;
@@ -46,6 +47,8 @@ Console.WriteLine(appSettingLogging);
 
 //3.best practice
 builder.Services.AddDemoFeature();
+
+
 builder.Services.AddApplicationServices();
 //------
 
@@ -92,6 +95,11 @@ if (builder.Environment.IsDevelopment())
 //builder.Logging.SetMinimumLevel(LogLevel.Trace);
 
 //Logging ***
+
+//todo: add connection string for sqlite database 
+//! AddInfrastructureServices 
+//* we must inject builder.configuration to use for infrastructure for example to database option 
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -173,5 +181,3 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 // The appsettings.json file is loaded first. Then the values in appsettings.<ASPNETCORE_
 // ENVIRONMENT>.json are loaded. The latest configuration values loaded in the chain
 // override the previous values in which the pathname matches.
-
-//todo: add connection string for sqlite database 

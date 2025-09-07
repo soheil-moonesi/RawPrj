@@ -13,12 +13,14 @@
 //the class in the same namespace as the element we extend.
 
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using Application.Common.Behaviour;
 using MediatR;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using SQLitePCL;
 
+//note : namespace is very important 
 namespace Application
 {
     public static class ConfigureServices
@@ -37,11 +39,13 @@ namespace Application
             // Single Save Point: When you call _unitOfWork.SaveChanges(), it calls SaveChanges() on that one shared DbContext.
             //  This ensures that all changes made by any repository during the request are saved together as a single transaction. Either all succeed, or all fail.      
             services.AddScoped<IUnitOfWork, UnitofWork>();
-            //services.AddDbContext<MustCreateDbContext>(option=>option.UseSqlite(Configuration.GetConnectionString("")))
+
+
+
             return services;
         }
-//Use TRequest/TResponse when working directly with MediatR interfaces
-//Use TInput/TOutput when creating abstract/base classes for better generalization
+        //Use TRequest/TResponse when working directly with MediatR interfaces
+        //Use TInput/TOutput when creating abstract/base classes for better generalization
 
 
     }
