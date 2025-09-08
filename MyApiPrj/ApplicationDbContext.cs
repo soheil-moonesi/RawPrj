@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-
+//dotnet ef migrations add Init
+//dotnet ef database update
 public class ApplicationDbContext : DbContext
 {
     public DbSet<Product> Products { get; set; }
@@ -15,13 +16,13 @@ public class ApplicationDbContext : DbContext
     //It provides type safety.
     <ApplicationDbContext>
 
-//This is about inheritance. Your ApplicationDbContext inherits from the base DbContext class (from the EF Core library).
-// The base DbContext class requires this configuration information to know how to connect to the database.
-// By writing : base(options), you are simply passing the configuration (the DbContextOptions object) up to the base class's constructor.
-// Analogy: Imagine you're giving a package to a courier service (DbContext).
-// You receive the package with instructions (DbContextOptions<ApplicationDbContext> options).
-// You don't open it or use it yourself. You just hand it over to the courier.
-// The courier (base class) knows how to read the instructions and deliver the package.
+    //This is about inheritance. Your ApplicationDbContext inherits from the base DbContext class (from the EF Core library).
+    // The base DbContext class requires this configuration information to know how to connect to the database.
+    // By writing : base(options), you are simply passing the configuration (the DbContextOptions object) up to the base class's constructor.
+    // Analogy: Imagine you're giving a package to a courier service (DbContext).
+    // You receive the package with instructions (DbContextOptions<ApplicationDbContext> options).
+    // You don't open it or use it yourself. You just hand it over to the courier.
+    // The courier (base class) knows how to read the instructions and deliver the package.
 
     options) : base(options)
     {
