@@ -23,7 +23,7 @@ public class ApplicationDbContext : DbContext
 // You don't open it or use it yourself. You just hand it over to the courier.
 // The courier (base class) knows how to read the instructions and deliver the package.
 
-    option) : base(option)
+    options) : base(options)
     {
 
     }

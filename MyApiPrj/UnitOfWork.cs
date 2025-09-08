@@ -2,12 +2,22 @@ using Microsoft.EntityFrameworkCore;
 
 public class UnitofWork : IUnitOfWork
 {
+    //An error occurred while accessing the Microsoft.Extensions.Hosting services. 
+    // Continuing without the application service provider.
+    //  Error: Some services are not able to be constructed (Error while validating the service descriptor 
+    // 'ServiceType: IUnitOfWork Lifetime: Scoped ImplementationType: UnitofWork':
+    //  Unable to resolve service for type 'Microsoft.EntityFrameworkCore.DbContext' while attempting to activate 'UnitofWork'.)
+    //Unable to create a 'DbContext' of type 'RuntimeType'. 
+    //The exception 'Unable to resolve service for type 'Microsoft.EntityFrameworkCore.DbContextOptions`1[ApplicationDbContext]' 
+    // while attempting to activate 'ApplicationDbContext'.' was thrown while attempting to create an instance.
+    //  For the different patterns supported at design time, see https://go.microsoft.com/fwlink/?linkid=851728
 
-    private readonly DbContext _context;
+//this error above is resolve when i change Dbcontext to ApplicationDbContext
+    private readonly ApplicationDbContext _context;
     private readonly Dictionary<Type, object> _repositories;
 
     //todo: explain code
-    public UnitofWork(DbContext context)
+    public UnitofWork(ApplicationDbContext context)
     {
         _context = context;
 

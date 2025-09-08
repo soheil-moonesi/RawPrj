@@ -10,7 +10,7 @@ namespace Infrastructure
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
 
-           services.AddDbContext<ApplicationDbContext>(option => option.UseSqlite(configuration.GetConnectionString("")));
+          services.AddDbContext<ApplicationDbContext>(option => option.UseSqlite(configuration.GetConnectionString("DefaultConnection")));
 
             return services;
 
