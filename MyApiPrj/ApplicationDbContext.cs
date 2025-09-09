@@ -43,11 +43,12 @@ public class ApplicationDbContext : DbContext
 // The control flow is inverted: The framework controls when and if your code runs. This is often called the Hollywood Principle: "Don't call us, we'll call you."
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-modelBuilder.Entity<Product>().HasData(new Product
-{
+
+    modelBuilder.Entity<Product>().HasData(new Product
+    {
     Id=1,
     Name = "ProductTest1"
-});
+    });
 
     }
 
@@ -93,3 +94,17 @@ modelBuilder.Entity<Product>().HasData(new Product
 // Flexibility: You can easily change the database provider (e.g., from SQLite to SQL Server) 
 // just by changing the registration in Program.cs without touching the ApplicationDbContext class itself.
 //  This is a key principle called Dependency Inversion.
+
+
+
+// The "When": Model Building Phase
+// This method is called once per application instance (usually per DbContext type) when the model is being built and cached. 
+//This happens the first time a DbContext of this type is used.
+// It is not called on every database query or every time you create a new DbContext instance.
+// This makes it extremely efficient for one-time setup tasks like configuration and seeding.
+// Analogy: Building a House
+// DbContext is the construction site.
+// ModelBuilder is the foreman who shows up at the very beginning of the project with the blueprints.
+// OnModelCreating is your chance to give instructions to the foreman on how to read and modify those blueprints before any foundation is poured.
+// You (ApplicationDbContext) are the architect.
+// The foreman (ModelBuilder) doesn't exist until the construction company (EF Core) starts the project, and he only asks for your instructions once, at the very start.
