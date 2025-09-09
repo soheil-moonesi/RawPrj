@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 //dotnet ef migrations add Init
 //dotnet ef database update
+//dotnet ef migrations remove
 public class ApplicationDbContext : DbContext
 {
     public DbSet<Product> Products { get; set; }
@@ -26,9 +27,52 @@ public class ApplicationDbContext : DbContext
 
     options) : base(options)
     {
+        //SeedDatabase();
+    }
+
+    //why we must use model builder :
+    //The primary job of the ModelBuilder is to let you configure your model using a fluent API. This is more powerful than using data annotations (attributes on your classes) because it:
+    //Keons Configuration Separate: Your entity classes (Product) remain clean POCOs (Plain Old CLR Objects) without being cluttered with database-specific attributes.
+    //Is More Expressive: You can configure complex relationships, inheritance strategies (TPH, TPT, TPC), composite keys, and seed data in a very readable way.
+    //Provides Full Control: You can have conditional logic in OnModelCreating to configure your model differently based on environment, user, or other factors.
+
+//How to Spot a Callback:
+// You override a virtual or abstract method from a base class.
+// You implement an interface method required by a framework.
+// You pass a method (often a lambda) as a parameter to a framework method (e.g., .ForEach(...)).
+// The control flow is inverted: The framework controls when and if your code runs. This is often called the Hollywood Principle: "Don't call us, we'll call you."
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+modelBuilder.Entity<Product>().HasData(new Product
+{
+    Id=1,
+    Name = "ProductTest1"
+});
 
     }
 
+
+
+
+
+    //Why This Approach is Problematic
+    // Violates Single Responsibility Principle: The DbContext's job is
+    // to manage database connections and track changes, not to handle data seeding.
+    // Unexpected Side Effects: The constructor runs every time a new DbContext instance is created.
+    // This could happen multiple times during a request or in different parts of your application.
+    // Inefficient: You're attempting to add seed data every single time the context is instantiated, which is not what you want.
+    // Breaks Patterns: If you're using Repository/Unit of Work patterns, you're abstracting away the DbContext.
+    //  Putting seeding logic here undermines that abstraction.
+
+    // public void SeedDatabase()
+    // {
+    //     Products.Add(new Product
+    //     {
+    //         Id = 1,
+    //         Name = "TestProduct1"
+    //     });
+
+    // }
 
 }
 
