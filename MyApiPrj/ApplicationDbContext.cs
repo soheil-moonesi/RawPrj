@@ -44,10 +44,25 @@ public class ApplicationDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
-    modelBuilder.Entity<Product>().HasData(new Product
+        modelBuilder.Entity<Product>(entity =>
+        {
+            entity.ToTable("Products");
+            entity.HasKey(p => p.ProductIdentifier);
+            entity.Property(p => p.ProductName).IsRequired().HasMaxLength(200);
+
+        }
+        );
+
+        modelBuilder.Entity<Manufacture>(entity =>
+        {
+            entity.ToTable("Manufactures");
+        });
+
+
+        modelBuilder.Entity<Product>().HasData(new Product
     {
-    Id=1,
-    Name = "ProductTest1"
+   ProductIdentifier=1,
+    ProductName = "ProductTest1"
     });
 
     }
