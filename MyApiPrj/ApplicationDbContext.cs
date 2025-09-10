@@ -2,6 +2,9 @@ using Microsoft.EntityFrameworkCore;
 //dotnet ef migrations add Init
 //dotnet ef database update
 //dotnet ef migrations remove
+
+//dotnet ef database drop
+
 public class ApplicationDbContext : DbContext
 {
     public DbSet<Product> Products { get; set; }
@@ -75,7 +78,7 @@ public class ApplicationDbContext : DbContext
         {
             ManufacturerIdentifier = 1,
             ManufactureName = "Benz",
-            ManufactureCountry="Germany"
+            ManufactureCountry = "Germany"
 
         });
 
