@@ -153,14 +153,16 @@ app.MapGet("/weatherforecast", () =>
 
 
 //http://localhost:5026/MediateRTest?a=5&b=3
-app.MapGet("/MediateRTest", async (IMediator mediateR ,[FromQuery]int a ,[FromQuery]int b )=>
+app.MapGet("/MediateRTest", async (IMediator mediateR, [FromQuery] int a, [FromQuery] int b) =>
 {
-    var query = new AddNumbersQuery(a, b);
-    var result = await mediateR.Send(query);
+var query = new AddNumbersQuery(a, b);
+var result = await mediateR.Send(query);
+Console.WriteLine($"{result} in Program");
 
 })
 .WithName("MediateRTest");
-
+//todo: create other types of requests in mediateR
+//todo: use Resourse in Project
 
 
 
