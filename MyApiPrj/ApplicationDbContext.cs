@@ -36,34 +36,48 @@ public class ApplicationDbContext : DbContext
     //Is More Expressive: You can configure complex relationships, inheritance strategies (TPH, TPT, TPC), composite keys, and seed data in a very readable way.
     //Provides Full Control: You can have conditional logic in OnModelCreating to configure your model differently based on environment, user, or other factors.
 
-//How to Spot a Callback:
-// You override a virtual or abstract method from a base class.
-// You implement an interface method required by a framework.
-// You pass a method (often a lambda) as a parameter to a framework method (e.g., .ForEach(...)).
-// The control flow is inverted: The framework controls when and if your code runs. This is often called the Hollywood Principle: "Don't call us, we'll call you."
+    //How to Spot a Callback:
+    // You override a virtual or abstract method from a base class.
+    // You implement an interface method required by a framework.
+    // You pass a method (often a lambda) as a parameter to a framework method (e.g., .ForEach(...)).
+    // The control flow is inverted: The framework controls when and if your code runs. This is often called the Hollywood Principle: "Don't call us, we'll call you."
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
         modelBuilder.Entity<Product>(entity =>
         {
             entity.ToTable("Products");
-            entity.HasKey(p => p.ProductIdentifier);
+            entity.HasKey(p => p.ProductIdentifier); // Defines the Primary Key
             entity.Property(p => p.ProductName).IsRequired().HasMaxLength(200);
 
+            entity.HasOne(p => p.ProductManufacture) // A Product has one Manufacture...
+            .WithMany(m => m.ManufactureProducts) // ...and a Manufacture has many Products
+            .HasForeignKey(p => p.ManufactureTraceId); // ...using this property as the Foreign Key
         }
         );
 
         modelBuilder.Entity<Manufacture>(entity =>
         {
             entity.ToTable("Manufactures");
+            entity.HasKey(m => m.ManufacturerIdentifier);
         });
 
 
         modelBuilder.Entity<Product>().HasData(new Product
-    {
-   ProductIdentifier=1,
-    ProductName = "ProductTest1"
-    });
+        {
+            ProductIdentifier = 1,
+            ProductName = "SLS",
+            ManufactureTraceId = 1
+        });
+
+
+        modelBuilder.Entity<Manufacture>().HasData(new Manufacture
+        {
+            ManufacturerIdentifier = 1,
+            ManufactureName = "Benz",
+            ManufactureCountry="Germany"
+
+        });
 
     }
 

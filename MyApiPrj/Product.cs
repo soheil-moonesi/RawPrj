@@ -1,12 +1,18 @@
 using System.ComponentModel.Design;
-
+//this is "many" side
 public class Product
 {
     public int ProductIdentifier { get; set; }
     public  string ProductName { get; set; }
     public int ProductQuantityInStock { get; set; }
-
+    //This is the foreign key property.
+    //  It holds the value of the ManufacturerIdentifier from the Manufacture that this specific Product belongs to.
+//    This is the critical piece of data that creates the link in the database.
     public int ManufactureTraceId { get; set; }
+
+    //This is a reference navigation property.
+    //It is a reference to the single Manufacture object that this Product belongs to. 
+    //This represents the "One" part of the relationship from the child's perspective.
     public virtual Manufacture ProductManufacture { get; set; }
 
 
