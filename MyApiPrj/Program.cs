@@ -14,6 +14,49 @@ using Infrastructure;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using static CompositionRoot.DemoFeature.MyFeature;
+//System.Reflection
+// Purpose: Allows you to inspect and interact with your application's structure at runtime.
+// What it does:
+// Examines assemblies, types, methods, and properties
+// Discovers what resources are embedded in your application
+// Gets information about your compiled code
+// Find what resources are available in your assembly
+// todo: test code
+// string[] resourceNames = Assembly.GetExecutingAssembly().GetManifestResourceNames();
+using System.Reflection;
+//System.Resources
+// Purpose: Manages embedded resources like strings, images, and files in your application.
+// What it does:
+// Loads and accesses compiled resources (.resources files)
+// Handles resource fallback for different languages
+// Manages resource sets and streams
+//todo : test code
+// Create a ResourceManager to access embedded resources
+//var resourceManager = new ResourceManager("MyApp.Resources", assembly);
+// Read string values from resources
+//string welcomeMessage = resourceManager.GetString("WelcomeMessage");
+using System.Resources;
+
+//System.Globalization
+// Purpose: Handles language, culture, and region-specific formatting.
+// What it does:
+// Manages different cultures and languages (en-US, fr-FR, etc.)
+// Handles date, time, number, and currency formatting
+// Supports internationalization and localization
+//todo: test code
+// Set specific culture for resource lookup
+// var frenchCulture = new CultureInfo("fr-FR");
+// string frenchText = resourceManager.GetString("WelcomeMessage", frenchCulture);
+
+ // Culture-specific formatting
+// double price = 1234.56;
+// string usPrice = price.ToString("C", new CultureInfo("en-US")); // "$1,234.56"
+// string frPrice = price.ToString("C", new CultureInfo("fr-FR")); // "1 234,56 €"
+
+
+using System.Globalization;
+
+
 //todo : add services
 //When you create a web app, IConfiguration is automatically set up
 var builder = WebApplication.CreateBuilder(args);
@@ -162,10 +205,11 @@ Console.WriteLine($"{result} in Program");
 })
 .WithName("MediateRTest");
 //todo: create other types of requests in mediateR
-//todo: use Resourse in Project
-
-
-
+//todo: use resource in controllers
+//https://www.c-sharpcorner.com/UploadFile/65794e/how-to-read-resx-file-in-c-sharp/
+ResourceManager resourceManager = new ResourceManager("MyApiPrj.MyResources", Assembly.GetExecutingAssembly());
+string MyResourcesLog = resourceManager.GetString("MyResourseLog");
+Console.WriteLine(MyResourcesLog);
 //app.MapGet("/{text}", (string text) => FiggleFonts.Standard.Render(text));
 //http://localhost:5026/Soheil?font=DotMatrix pass font by query string
 app.MapGet("/{text}", (string text, string? font) => AsciiArt.Write(text, font));
