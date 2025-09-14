@@ -27,6 +27,13 @@ namespace Application
     {
         //! why , when i add service AddScope<IUnitOfWork,UnitOfWork>
         //!  automatically add object to method under?
+        
+        // ConfigureServices = AddApplicationServices
+        // ConfigureServices takes an IServiceCollection interface, which
+        // exposes all the services available in your ASP.NET Core, where any services are just one
+        // call away from being enabled. IServiceCollection enables Controllers and
+        // SwaggerGen, as you can see inside the ConfigureServices method.
+
         public static object AddApplicationServices(this IServiceCollection services)
         {
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
@@ -40,7 +47,16 @@ namespace Application
             //  This ensures that all changes made by any repository during the request are saved together as a single transaction. Either all succeed, or all fail.      
             services.AddScoped<IUnitOfWork, UnitofWork>();
 
-
+            services.AddController();
+            
+            services.AddSwaggerGen(c =>
+           {
+               c.SwaggerDoc("v1", new OpenApiInfo
+               {
+                   Title = "Web",
+                   Version = "v1"
+               });
+           });
 
             return services;
         }

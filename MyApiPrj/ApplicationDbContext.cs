@@ -140,3 +140,10 @@ public class ApplicationDbContext : DbContext
 // OnModelCreating is your chance to give instructions to the foreman on how to read and modify those blueprints before any foundation is poured.
 // You (ApplicationDbContext) are the architect.
 // The foreman (ModelBuilder) doesn't exist until the construction company (EF Core) starts the project, and he only asks for your instructions once, at the very start.
+
+
+// • Add-Migration: Adds a new migration
+// • Drop-Database: Drops the database
+// • Get-DbContext: Lists and gets info about DbContext types
+// • Script-Migrations: Creates SQL scripts for migration
+// • Update-Database: Updates the database to the latest migration
