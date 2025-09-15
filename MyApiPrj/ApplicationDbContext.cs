@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-//dotnet ef migrations add Init
+//dotnet ef migrations add Init --verbose
 //dotnet ef database update
 //dotnet ef migrations remove
 
@@ -30,6 +30,8 @@ public class ApplicationDbContext : DbContext
 
     options) : base(options)
     {
+        System.Diagnostics.Debugger.Launch();
+
         //SeedDatabase();
     }
 
@@ -84,6 +86,13 @@ public class ApplicationDbContext : DbContext
 
     }
 
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information).EnableSensitiveDataLogging().EnableDetailedErrors();
+        
+
+    }
 
 
 
