@@ -25,11 +25,14 @@ using SQLitePCL;
 //note : namespace is very important 
 namespace Application
 {
+    //takes an IServiceCollection interface, which
+// exposes all the services available in your ASP.NET Core, where any services are just one
+// call away from being enabled.
     public static class ConfigureServices
     {
         //! why , when i add service AddScope<IUnitOfWork,UnitOfWork>
         //!  automatically add object to method under?
-        
+
         // ConfigureServices = AddApplicationServices
         // ConfigureServices takes an IServiceCollection interface, which
         // exposes all the services available in your ASP.NET Core, where any services are just one
@@ -50,7 +53,7 @@ namespace Application
             services.AddScoped<IUnitOfWork, UnitofWork>();
 
             services.AddControllers();
-            
+
             services.AddSwaggerGen(c =>
            {
                c.SwaggerDoc("v1", new OpenApiInfo
