@@ -18,6 +18,8 @@ using Application.Common.Behaviour;
 using MediatR;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 using SQLitePCL;
 
 //note : namespace is very important 
@@ -47,7 +49,7 @@ namespace Application
             //  This ensures that all changes made by any repository during the request are saved together as a single transaction. Either all succeed, or all fail.      
             services.AddScoped<IUnitOfWork, UnitofWork>();
 
-            services.AddController();
+            services.AddControllers();
             
             services.AddSwaggerGen(c =>
            {

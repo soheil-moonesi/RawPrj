@@ -155,7 +155,17 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+
+
+    //is redundent with useSwagger
+    //app.MapOpenApi();
+    // http://localhost:5026/swagger/v1/swagger.json
+   //http://localhost:5026/swagger/Index.html
+    app.UseDeveloperExceptionPage();
+    app.UseSwagger();
+    app.UseSwaggerUI(
+     c=>c.SwaggerEndpoint("/swagger/v1/swagger.json","Web v1")
+    );
 }
 
 app.Logger.LogTrace("this is log trace");

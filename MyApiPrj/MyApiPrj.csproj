@@ -21,6 +21,12 @@
   <PrivateAssets>all</PrivateAssets>
   <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 </PackageReference>
+
+<PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4" />
+<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.9" />
+<PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="9.0.9" />
   </ItemGroup>
+
+
 
 </Project>
