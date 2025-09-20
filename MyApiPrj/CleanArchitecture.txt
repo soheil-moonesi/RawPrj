@@ -77,3 +77,22 @@ Again, you will create the infrastructure layer projects in the Structuring a cl
 architecture solution section of this chapter. In the meantime, let's move to the next
 section, which is the presentational layer.
 
+
+
+dotnet new classlib -f netstandard2.1 --name Travel.Domain
+
+-f netstandard2.1 (or --framework netstandard2.1): This specifies the target framework. Using .NET Standard 2.1 is a strategic decision because it ensures your Travel.Domain library is compatible with a wide range of .NET implementations, including:
+
+.NET Core 3.x and later
+
+.NET 5, 6, 7, 8, and later
+
+
+ Then we need to add a reference to the Travel.Domain project:
+ 
+dotnet add reference ../Travel.Domain/Travel.Domain.csproj
+
+../ means "the parent directory" or "go up one level"
+
+Now, the Travel.Application project has a dependency on the Travel.
+Domain project, but only this project.
