@@ -1,0 +1,79 @@
+In clean architecture, two layers must be the core or center of the structure. These
+layers are the domain layer, which contains most of your entities, enums, and settings.
+The application layer keeps most of your Data Transfer Objects (DTOs), interfaces,
+mappings, exceptions, behaviors, and business logic.
+
+The difference is that the enterprise logic could be shared across many systems,
+whereas the application logic or business logic is specific.
+
+Now, rather than having the
+core dependent on data access and infrastructure, we invert those dependencies. So,
+presentation and infrastructure depend on the core, but the core has no dependency
+on either layer.
+
+This structure is done by adding abstractions or interfaces within the
+application layer, which are implemented outside of the application layer in other
+layers. For instance, if we wanted to implement the repository pattern, we would add an
+IRepository interface within the infrastructure application and implementation.
+
+
+The core folder will have Application and Domain projects.
+• The infrastructure folder will have Data and Shared projects.
+• The presentation folder will have a WebApi project.
+
+
+The core layer – directory
+The core layer is the center of clean architecture. We will implement this as a directory
+or folder inside a Visual Studio solution that can be created using the .NET Core CLI. All
+other project dependencies must point toward the core to the domain and application
+project to be specific. Similarly, the core layer will never depend on any other layers.
+To set up the core layer, we need two projects – the Domain and Application projects.
+
+Domain – project
+This clean architecture part is a .NET Standard 2.1 class library project with entities,
+interfaces, enums, DTOs, and so on.
+The Domain project must have an empty project reference, which shows that it does not
+have any dependencies on any project.
+
+Application – project
+This part of the clean architecture is also a .NET Standard 2.1 class library project. It has
+defined interfaces, but the implementations are outside of this layer. This project also has
+the command and queries of the CQRS pattern, the behaviors of MediatR, the profile of
+AutoMapper, exceptions, models, and so on We will create the aforementioned projects in the Structuring a clean architecture solution
+section of this chapter.
+What if you just started to build microservices and realized that there is code in the core
+layer you want to reuse in other services or domains?
+
+Shared Kernel – NuGet project
+Ideally, the Shared Kernel project is a private NuGet package for sharing code
+between multiple projects, in microservices, for instance. This project helps us easily swap
+out which version we depend on without breaking the work of our peers or other teams
+building other solutions.
+Now let's take a look at the infrastructure layer.
+
+
+The infrastructure layer – directory
+The infrastructure layer has the class implementations of interfaces defined in the
+Application project. Resources such as SMTP, filesystems, or web services are samples
+of the application's external dependencies but implemented in this layer.
+This layer is another directory inside the solution while holding multiple projects. The
+projects we will add here are for data and shared projects. 
+
+We can also add a project
+named Identity for authentication, but we will do this in Chapter 9, Securing
+ASP.NET Core, to keep the structuring part of this clean architecture minimal. So here
+they are.
+To set up the infrastructure layer, we will need two projects – Data and Shared.
+
+Data – project
+This part of the infrastructure layer is a .NET 5.0 class library project intended for a
+database. You can also name this data project to a persistence project; persistence and data
+are intractable.
+
+Shared – project
+This part of the infrastructure layer is also a NET 5.0 class library project. This project will
+include shared code between different services, such as Email, SMS, or Date Time.
+Again, you will create the infrastructure layer projects in the Structuring a clean
+architecture solution section of this chapter. In the meantime, let's move to the next
+section, which is the presentational layer.
+
