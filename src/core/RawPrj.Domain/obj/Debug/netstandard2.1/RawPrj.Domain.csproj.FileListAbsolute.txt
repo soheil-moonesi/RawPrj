@@ -1,0 +1,10 @@
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Domain\bin\Debug\netstandard2.1\RawPrj.Domain.deps.json
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Domain\bin\Debug\netstandard2.1\RawPrj.Domain.dll
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Domain\bin\Debug\netstandard2.1\RawPrj.Domain.pdb
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Domain\obj\Debug\netstandard2.1\RawPrj.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Domain\obj\Debug\netstandard2.1\RawPrj.Domain.AssemblyInfoInputs.cache
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Domain\obj\Debug\netstandard2.1\RawPrj.Domain.AssemblyInfo.cs
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Domain\obj\Debug\netstandard2.1\RawPrj.Domain.csproj.CoreCompileInputs.cache
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Domain\obj\Debug\netstandard2.1\RawPrj.Domain.sourcelink.json
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Domain\obj\Debug\netstandard2.1\RawPrj.Domain.dll
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Domain\obj\Debug\netstandard2.1\RawPrj.Domain.pdb

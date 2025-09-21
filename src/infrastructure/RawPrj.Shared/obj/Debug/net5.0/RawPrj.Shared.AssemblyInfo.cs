@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RawPrj.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4515a36e09253f0ad094d18e256072b07254af4a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+676cd16ac2952e8615b8c4c3857f0da824639deb")]
 [assembly: System.Reflection.AssemblyProductAttribute("RawPrj.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RawPrj.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

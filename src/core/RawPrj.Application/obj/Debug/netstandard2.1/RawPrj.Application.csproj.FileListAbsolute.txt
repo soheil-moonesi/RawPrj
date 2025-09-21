@@ -1,0 +1,14 @@
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\bin\Debug\netstandard2.1\RawPrj.Application.deps.json
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\bin\Debug\netstandard2.1\RawPrj.Application.dll
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\bin\Debug\netstandard2.1\RawPrj.Application.pdb
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\bin\Debug\netstandard2.1\RawPrj.Domain.dll
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\bin\Debug\netstandard2.1\RawPrj.Domain.pdb
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\obj\Debug\netstandard2.1\RawPrj.Application.csproj.AssemblyReference.cache
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\obj\Debug\netstandard2.1\RawPrj.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\obj\Debug\netstandard2.1\RawPrj.Application.AssemblyInfoInputs.cache
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\obj\Debug\netstandard2.1\RawPrj.Application.AssemblyInfo.cs
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\obj\Debug\netstandard2.1\RawPrj.Application.csproj.CoreCompileInputs.cache
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\obj\Debug\netstandard2.1\RawPrj.Application.sourcelink.json
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\obj\Debug\netstandard2.1\RawPrj.A.B3777D7A.Up2Date
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\obj\Debug\netstandard2.1\RawPrj.Application.dll
+C:\OnlinePrj\RawPrj\src\core\RawPrj.Application\obj\Debug\netstandard2.1\RawPrj.Application.pdb

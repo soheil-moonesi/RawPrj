@@ -1,0 +1,6 @@
+dotnet tool install --global dotnet-ef
+dotnet add package Microsoft.EntityFrameworkCore.Design
+
+After navigating to the Travel.Data project, you are now ready to run your first
+migration:
+dotnet ef migrations add InitialCreate --startup-project ../../presentation/RawPrj.WebApi/
