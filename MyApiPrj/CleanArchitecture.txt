@@ -96,3 +96,16 @@ dotnet add reference ../Travel.Domain/Travel.Domain.csproj
 
 Now, the Travel.Application project has a dependency on the Travel.
 Domain project, but only this project.
+
+clean architecture. 
+There is the core layer that does not have
+any dependencies on the infrastructure and presentation layers. An infrastructure layer
+communicates with external sources and the presentation layer, which your users use and
+interact with
+
+An entity is a representation of a domain object model in an
+application. A database translates an entity into a row in a database table. Similarly, the
+properties of an entity are the columns in a database table.
+
+On the other hand, an enum is a type of class representing a set of constants or
+read-only variables.
