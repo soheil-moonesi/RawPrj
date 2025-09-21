@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\core\RawPrj.Application\RawPrj.Application.csproj" />
     <ProjectReference Include="..\..\infrastructure\RawPrj.Data\RawPrj.Data.csproj" />
+    <ProjectReference Include="..\..\infrastructure\RawPrj.Shared\RawPrj.Shared.csproj" />
   </ItemGroup>
 
 </Project>
