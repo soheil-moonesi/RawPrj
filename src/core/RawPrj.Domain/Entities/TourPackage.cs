@@ -1,4 +1,5 @@
-using RawPrj.Domain.Enums;
+
+using RowPrj.Domain.Enums;
 
 namespace RawPrj.Domain.Entities
 {

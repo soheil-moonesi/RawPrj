@@ -1,5 +1,5 @@
 //bring in System.Collections.Generic and define the TourList entity
-using system.collection.generic;
+using System.Collections.Generic;
 
 namespace RawPrj.Domain.Entities
 {

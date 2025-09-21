@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "RawPrj.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "RawPrj.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RawPrj.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RawPrj.Application.dll": {}
+        }
+      },
+      "RawPrj.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/RawPrj.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RawPrj.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "RawPrj.Application/1.0.0": {
+      "type": "project",
+      "path": "../../core/RawPrj.Application/RawPrj.Application.csproj",
+      "msbuildProject": "../../core/RawPrj.Application/RawPrj.Application.csproj"
+    },
+    "RawPrj.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../core/RawPrj.Domain/RawPrj.Domain.csproj",
+      "msbuildProject": "../../core/RawPrj.Domain/RawPrj.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "RawPrj.Application >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Soheil\\.nuget\\packages\\": {}
@@ -31,7 +68,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\OnlinePrj\\RawPrj\\src\\core\\RawPrj.Application\\RawPrj.Application.csproj": {
+              "projectPath": "C:\\OnlinePrj\\RawPrj\\src\\core\\RawPrj.Application\\RawPrj.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

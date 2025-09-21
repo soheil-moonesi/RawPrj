@@ -33,6 +33,56 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "RawPrj.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "RawPrj.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RawPrj.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RawPrj.Application.dll": {}
+        }
+      },
+      "RawPrj.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RawPrj.Application": "1.0.0",
+          "RawPrj.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RawPrj.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RawPrj.Data.dll": {}
+        }
+      },
+      "RawPrj.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/RawPrj.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RawPrj.Domain.dll": {}
+        }
+      },
+      "RawPrj.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RawPrj.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RawPrj.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RawPrj.Shared.dll": {}
+        }
       }
     }
   },
@@ -67,11 +117,34 @@
         "microsoft.openapi.1.6.17.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
+    },
+    "RawPrj.Application/1.0.0": {
+      "type": "project",
+      "path": "../../core/RawPrj.Application/RawPrj.Application.csproj",
+      "msbuildProject": "../../core/RawPrj.Application/RawPrj.Application.csproj"
+    },
+    "RawPrj.Data/1.0.0": {
+      "type": "project",
+      "path": "../../infrastructure/RawPrj.Data/RawPrj.Data.csproj",
+      "msbuildProject": "../../infrastructure/RawPrj.Data/RawPrj.Data.csproj"
+    },
+    "RawPrj.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../core/RawPrj.Domain/RawPrj.Domain.csproj",
+      "msbuildProject": "../../core/RawPrj.Domain/RawPrj.Domain.csproj"
+    },
+    "RawPrj.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../infrastructure/RawPrj.Shared/RawPrj.Shared.csproj",
+      "msbuildProject": "../../infrastructure/RawPrj.Shared/RawPrj.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Microsoft.AspNetCore.OpenApi >= 9.0.8"
+      "Microsoft.AspNetCore.OpenApi >= 9.0.8",
+      "RawPrj.Application >= 1.0.0",
+      "RawPrj.Data >= 1.0.0",
+      "RawPrj.Shared >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -98,7 +171,17 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\OnlinePrj\\RawPrj\\src\\core\\RawPrj.Application\\RawPrj.Application.csproj": {
+              "projectPath": "C:\\OnlinePrj\\RawPrj\\src\\core\\RawPrj.Application\\RawPrj.Application.csproj"
+            },
+            "C:\\OnlinePrj\\RawPrj\\src\\infrastructure\\RawPrj.Data\\RawPrj.Data.csproj": {
+              "projectPath": "C:\\OnlinePrj\\RawPrj\\src\\infrastructure\\RawPrj.Data\\RawPrj.Data.csproj"
+            },
+            "C:\\OnlinePrj\\RawPrj\\src\\infrastructure\\RawPrj.Shared\\RawPrj.Shared.csproj": {
+              "projectPath": "C:\\OnlinePrj\\RawPrj\\src\\infrastructure\\RawPrj.Shared\\RawPrj.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -144,5 +227,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }
