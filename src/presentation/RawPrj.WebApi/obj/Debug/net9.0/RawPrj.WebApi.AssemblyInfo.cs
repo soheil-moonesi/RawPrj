@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RawPrj.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+051b21cfbb1513409df27bff360b37ebfe3cc867")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91b955a82993e68c12c43d254d7e2c1d999b29bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("RawPrj.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RawPrj.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
