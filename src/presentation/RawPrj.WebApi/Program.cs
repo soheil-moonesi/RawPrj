@@ -27,7 +27,8 @@ if (app.Environment.IsDevelopment())
      c=>c.SwaggerEndpoint("/swagger/v1/swagger.json","Web v1")
     );
 }
-
+//This maps your controller routes!
+app.MapControllers();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
